@@ -1,0 +1,6 @@
+           Cumulative Return  Stdev of Daily Return  Mean of Daily Return
+Benchmark             0.0123               0.017004              0.000168
+Optimal               2.0043               0.008718              0.002263
+
+Benchmark Ending Value: 1.0123
+Optimal Portfolio Ending Value: 3.0043
