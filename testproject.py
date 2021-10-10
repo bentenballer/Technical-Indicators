@@ -87,7 +87,7 @@ def part2(sd,ed):
     price_sma = id.price_sma(syms,sd,ed,lookback=lookback)
     bbp = id.bbp(syms,sd,ed,lookback=lookback)
     momentum = id.momentum(syms,sd,ed,lookback=lookback)
-    cci = id.cci(syms,sd,ed)
+    cci = id.cci(syms,sd,ed,lookback=lookback)
     will_r = id.will_r(syms,sd,ed)
 
     # indicator#1: Price/SMA
@@ -136,7 +136,7 @@ def part2(sd,ed):
 
     # indicator#4: Channel Commodity Index (CCI)
     figure, ax5 = plt.subplots(nrows=2, ncols=1, sharex=True, sharey=False)
-    ax5[0].title.set_text("Indicator 4: Channel Commodity Index (CCI)")
+    ax5[0].title.set_text("Indicator 4: Commodity Channel Index (CCI)")
     normed.plot(ax=ax5[0],color="green")
     cci.plot(ax=ax5[1],color="red")
     ax5[0].legend(["JPM"])
@@ -148,7 +148,7 @@ def part2(sd,ed):
 
     # indicator#5: William %R
     figure, ax6 = plt.subplots(nrows=2, ncols=1, sharex=True, sharey=False)
-    ax6[0].title.set_text("Indicator 5: William %R")
+    ax6[0].title.set_text("Indicator 5: Williams %R")
     normed.plot(ax=ax6[0], color="green")
     will_r.plot(ax=ax6[1], color="red")
     ax6[0].legend(["JPM"])
@@ -159,6 +159,7 @@ def part2(sd,ed):
     plt.savefig("p6_part2_will_r.png")
 
     return
+
 
 def test_code():
     sd = dt.datetime(2008,1,1)

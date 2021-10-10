@@ -62,8 +62,8 @@ def momentum(symbols, start_date, end_date, lookback):
         momentum.iloc[day,:] = (price.iloc[day,:] / price.iloc[day-lookback+1,:]) - 1
     return momentum
 
-# Channel Commodity Index (CCI)
-def cci(symbols, start_date, end_date, lookback=20):
+# Commodity Channel Index (CCI)
+def cci(symbols, start_date, end_date, lookback):
     sma = smavg(symbols, start_date, end_date, lookback)
     dates = pd.date_range(start_date, end_date)
     price = get_data(symbols, dates)
@@ -83,7 +83,7 @@ def cci(symbols, start_date, end_date, lookback=20):
         cci.iloc[day,:] = (price.iloc[day,:] - sma.iloc[day,:]) / (constant * mean_deviation)
     return cci
 
-# William %R
+# Williams %R
 def will_r(symbols, start_date, end_date, lookback=14):
     dates = pd.date_range(start_date, end_date)
     price = get_data(symbols, dates)
